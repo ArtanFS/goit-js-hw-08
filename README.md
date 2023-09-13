@@ -1,1 +1,1 @@
-GoIT HW-JS#8push by Anatolii Artiukhov
+GoIT HW-JS#8 by Anatolii Artiukhov
