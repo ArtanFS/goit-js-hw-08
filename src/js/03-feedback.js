@@ -13,7 +13,6 @@ function loadData(key) {
     const serializedState = localStorage.getItem(key);
     inputData =
       serializedState === null ? inputData : JSON.parse(serializedState);
-    return;
   } catch (error) {
     console.error('Get state error: ', error.message);
   }
@@ -44,7 +43,12 @@ messageInput.addEventListener(
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
+  if (emailInput.value === '' || messageInput.value === '') {
+    return;
+  }
   localStorage.removeItem(localStorageKey);
   form.reset();
   console.log(inputData);
+  inputData.email = '';
+  inputData.message = '';
 });
